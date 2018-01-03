@@ -1,6 +1,6 @@
 # KalmanFilterExample8
 
-[Kalman filterer example](https://github.com/richelbilderbeek/KalmanFilterExample) 8 is an example to use a Kalman filter.
+[Kalman filterer example](https://github.com/richelbilderbeek/KalmanFilterExamples) 8 is an example to use a Kalman filter.
 
 ![](CppKalmanFilterExample8.png)
 
