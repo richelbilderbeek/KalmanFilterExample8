@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QtMainDialog</class>
+ <widget class="QDialog" name="QtMainDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1004</width>
+    <height>697</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CppKalmanFilterExample8</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>266</width>
+        <height>1060</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QWidget" name="widget" native="true">
+         <layout class="QGridLayout" name="gridLayout_2">
+          <property name="horizontalSpacing">
+           <number>1</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>6</number>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_n_states">
+            <property name="text">
+             <string>Number of states</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="box_n_states">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>10</number>
+            </property>
+            <property name="value">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="QTableWidget" name="table_states">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>81</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20000</width>
+              <height>20000</height>
+             </size>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Symbol</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>x</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>v</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="box_n_timesteps">
+            <property name="maximum">
+             <number>1000000</number>
+            </property>
+            <property name="value">
+             <number>250</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_n_timesteps">
+            <property name="text">
+             <string>Number of timesteps</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_init_state_real" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_init_state_real">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Real initial state</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="table_init_state_real">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20000</width>
+              <height>20000</height>
+             </size>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <row>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Real</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_init_state_estimate" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_init_state_estimate">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Estimated initial state</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="table_init_state_estimate">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20000</width>
+              <height>20000</height>
+             </size>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <row>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Estimated</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>100.0</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>10.0</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_init_covariance_estimate" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_init_covariance_estimate">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Initial estimated covariances</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="table_init_covariance_estimate">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20000</width>
+              <height>20000</height>
+             </size>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <row>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>1.0</string>
+             </property>
+            </item>
+            <item row="0" column="1">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </item>
+            <item row="1" column="1">
+             <property name="text">
+              <string>1.0</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_control" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_control">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Control matrix</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="table_control">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20000</width>
+              <height>20000</height>
+             </size>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <row>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>1.0</string>
+             </property>
+            </item>
+            <item row="0" column="1">
+             <property name="text">
+              <string>0.005</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </item>
+            <item row="1" column="1">
+             <property name="text">
+              <string>0.1</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_measurement_noise_estimate" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_measurement_noise_estimate">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Estimated measurement noise</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="table_measurement_noise_estimate">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20000</width>
+              <height>20000</height>
+             </size>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <row>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>10.0</string>
+             </property>
+            </item>
+            <item row="0" column="1">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </item>
+            <item row="1" column="1">
+             <property name="text">
+              <string>10000000.0</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_process_noise_covariance_estimate" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_process_noise_covariance_estimate">
+            <property name="text">
+             <string>Estimated process noise covariance</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="table_process_noise_covariance_estimate">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20000</width>
+              <height>20000</height>
+             </size>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <row>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>0.01</string>
+             </property>
+            </item>
+            <item row="0" column="1">
+             <property name="text">
+              <string>0.01</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>0.01</string>
+             </property>
+            </item>
+            <item row="1" column="1">
+             <property name="text">
+              <string>0.01</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+         <zorder>table_process_noise_covariance_estimate</zorder>
+         <zorder>label_process_noise_covariance_estimate</zorder>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_observation" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_observation">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Observation</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="table_observation">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20000</width>
+              <height>20000</height>
+             </size>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <row>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>1.0</string>
+             </property>
+            </item>
+            <item row="0" column="1">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </item>
+            <item row="1" column="1">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_real_noise" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_real_noise">
+            <property name="text">
+             <string>Real measurement noise</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="table_real_measurement_noise">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20000</width>
+              <height>20000</height>
+             </size>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <row>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Measurement</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>10</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>10000000</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_real_process_noise" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_11">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Real process noise</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="table_real_process_noise">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20000</width>
+              <height>20000</height>
+             </size>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <row>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Process</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>0.01</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>0.01</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_state_transition" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_state_transition">
+            <property name="text">
+             <string>State transition matrix</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="table_state_transition">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20000</width>
+              <height>20000</height>
+             </size>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <row>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>1.0</string>
+             </property>
+            </item>
+            <item row="0" column="1">
+             <property name="text">
+              <string>0.1</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </item>
+            <item row="1" column="1">
+             <property name="text">
+              <string>1.0</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_input" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_input">
+            <property name="text">
+             <string>Input</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="table_input">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20000</width>
+              <height>20000</height>
+             </size>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <row>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>v</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Input</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>1.0</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QScrollArea" name="scrollArea_plot">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollArea_plot_widget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>693</width>
+        <height>677</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="layout_plots"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
